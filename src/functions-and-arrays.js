@@ -32,38 +32,53 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 
 function sumNumbers(nmr) {
-  let onenrarray = nmr[0] 
-  if (nmr.length === 0){return 0};
+  
+  let sum = 0;
 
-  for (let i = 0 ; i < nmr.length ; i++){
-    if (nmr[i] === 0) {return 0};
-    nmr[0] + nmr[i]
+  if (nmr.length === 0) {
+    return 0;
   }
-  return onenrarray 
+
+  for (let i = 0; i < nmr.length; i++) {
+    sum += nmr[i];
+  }
+
+  return sum;
   }
   
 
 // Iteration #3.1 Bonus:
 function sum(arr) {
-    let sum = 0
-    if (arr.length === 0){return 0}
-    for (let i = 0; i<arr.length; i++){
-      if (arr[i]===0){return 0}
-      if (typeof arr[i] === 'string' ){
-       sum+= arr[i].length
-      }
-      if (typeof arr[i] === 'number'){
-        sum += arr[i]
-      }
-      if (typeof arr[i] === 'boolean'){
-       sum += arr[i] ? 1 : 0
-      } else {
-        throw new Error("Unsupported data type");
-    }
-    }
 
-  return [sum]
-}
+    let sum = 0;
+
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      return 0;
+    } if (typeof arr[i] === 'string') {
+      sum += arr[i].length;
+    } else if (typeof arr[i] === 'number') {
+      sum += arr[i];
+    } else if (typeof arr[i] === 'boolean') {
+      if (arr[i] === true) {
+        sum += 1;
+      }
+      if (arr[i]=== false) {
+        sum += 0
+      }
+    } else {
+      throw new Error('Unsupported data type');
+    }
+  }
+
+  return sum;
+  }
+
+
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -82,12 +97,13 @@ function averageNumbers(array) {
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(words) { 
-  if (words == false){return null};
-  let sum = words[0].length
+  if (words.length  ===  0){return null};
+  let sum = 0
   for (let i = 0 ; i < words.length ; i++){
-  words[0].length+words[i].length
+  sum += words[i].length
   }
   return sum/words.length
+
   }
 
  
@@ -208,7 +224,17 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(arr) {
+    for (i = 0; i < arr[i].length; i++) {
+    if (arr[i] = 1 ){
+      return 1
+    } 
+  }
+}
+
+ /*  if (arr[i]*arr[i+1]*arr[i+2]*arr[1+3] === 2 * 2 * 2 * 2){
+      return 16
+    }  */ 
 
 
 
